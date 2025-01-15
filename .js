@@ -13,23 +13,25 @@ function getComputerChoice(){
     }
 }
 
-//test
-let computerChoice;
-let numRock = 0;
-let numPaper= 0;
-let numScissor = 0;
+//REF: show each number of R, P, S created by getComputerChoice in 100 executions
+// let computerChoice;
+// let numRock = 0;
+// let numPaper= 0;
+// let numScissor = 0;
 
-for(let i=0; i<100; i++){
-    computerChoice = getComputerChoice();
-    switch(computerChoice){
-        case ROCK:
-            numRock++;
-        case PAPER:
-            numPaper++;
-        case SCISSOR:
-            numScissor++;
-    }
-}
-
-console.log(`Rock;${numRock} Paper;${numPaper} Scissor;${numScissor}`);
+// for(let i=0; i<100; i++){
+//     computerChoice = getComputerChoice();
+//     switch(computerChoice){
+//         case ROCK:
+//             numRock++;
+//             break;
+//         case PAPER:
+//             numPaper++;
+//             break;
+//         case SCISSOR:
+//             numScissor++;
+//             break;
+//     }
+// }
+// console.log(`Rock;${numRock} Paper;${numPaper} Scissor;${numScissor}`);
 

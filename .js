@@ -13,6 +13,7 @@ function getComputerChoice(){
     }
 }
 
+//test
 let computerChoice;
 let numRock = 0;
 let numPaper= 0;

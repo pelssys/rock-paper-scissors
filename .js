@@ -13,25 +13,19 @@ function getComputerChoice(){
     }
 }
 
-//REF: show each number of R, P, S created by getComputerChoice in 100 executions
-// let computerChoice;
-// let numRock = 0;
-// let numPaper= 0;
-// let numScissor = 0;
-
-// for(let i=0; i<100; i++){
-//     computerChoice = getComputerChoice();
-//     switch(computerChoice){
-//         case ROCK:
-//             numRock++;
-//             break;
-//         case PAPER:
-//             numPaper++;
-//             break;
-//         case SCISSOR:
-//             numScissor++;
-//             break;
-//     }
-// }
-// console.log(`Rock;${numRock} Paper;${numPaper} Scissor;${numScissor}`);
-
+function getHumanChoice(){
+    let successFlag = 0;
+     while(successFlag == 0){
+        let userInput = prompt("Rock, paper or scissor?").toLowerCase();
+         if(userInput === ROCK){
+            successFlag = 1;
+            return userInput;
+         } else if(userInput === PAPER){
+            successFlag = 1;
+            return userInput;
+         } else if(userInput === SCISSOR){
+            successFlag = 1;
+            return userInput;
+         }
+     }
+}

@@ -2,8 +2,8 @@ const ROCK = "rock";
 const PAPER = "paper";
 const SCISSOR = "scissor";
 
-let humanScore = 0;
-let computerScore = 0;
+let humanScore;
+let computerScore;
 
 function getComputerChoice(){
     let randomNum = Math.random();
@@ -38,7 +38,7 @@ function playRound(humanChoice, computerChoice){
     if(humanChoice === ROCK){
         switch(computerChoice){
             case ROCK:
-                console.log(`Even.\nSCORE: You[${humanScore}], Computer[${computerScore}]`);
+                console.log(`Draw.\nSCORE: You[${humanScore}], Computer[${computerScore}]`);
                 break;
             case PAPER:
                 computerScore++;
@@ -58,7 +58,7 @@ function playRound(humanChoice, computerChoice){
                 console.log(`You wrapped up the rock, win!\nSCORE: You[${humanScore}], Computer[${computerScore}]`);
                 break;
             case PAPER:
-                console.log(`Even.\nSCORE: You[${humanScore}], Computer[${computerScore}]`);
+                console.log(`Draw.\nSCORE: You[${humanScore}], Computer[${computerScore}]`);
                 break;
             case SCISSOR:
                 computerScore++;
@@ -78,9 +78,34 @@ function playRound(humanChoice, computerChoice){
                 console.log(`Cut paper into pieces. You win!\nSCORE: You[${humanScore}], Computer[${computerScore}]`);
                 break;
             case SCISSOR:
-                console.log(`Even.\nSCORE: You[${humanScore}], Computer[${computerScore}]`);
+                console.log(`Draw.\nSCORE: You[${humanScore}], Computer[${computerScore}]`);
                 break;
         }
     }
 }
 
+function playGame(){
+
+    let humanSelection;
+    let computerSelection;
+
+    humanScore = 0;
+    computerScore = 0;
+
+    for(let i=0; i<5; i++){
+        humanSelection = getHumanChoice();
+        computerSelection = getComputerChoice();
+
+        playRound(humanSelection, computerSelection);
+    }
+
+    if(humanScore>computerScore){
+        console.log(`OVERALL SCORE: You[${humanScore}], Computer[${computerScore}]\nYOU WON!`);
+    } else if(humanScore==commputerScore){
+        console.log(`OVERALL SCORE: You[${humanScore}], Computer[${computerScore}]\nEVEN!`);
+    } else if(humanScore<computerScore){
+        console.log(`OVERALL SCORE: You[${humanScore}], Computer[${computerScore}]\nYOU LOST!`);
+    }
+}
+
+playGame();
